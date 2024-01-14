@@ -58,7 +58,6 @@ jobs:
          name: unit-test-report
          path: app/build/reports/tests/testDebugUnitTest/
 
-
   instrumentation-test:
     needs: [unit-test]
     runs-on: macos-latest
@@ -84,7 +83,6 @@ jobs:
       - name: Upload test report
         uses: actions/upload-artifact@v3
         with:
-          name: unit-test-report
-          path: app/build/reports/androidTests/connected/debug
-
+          name: instrumentation-test-report
+          path: app/build/reports/androidTests/connected/debug/
 
