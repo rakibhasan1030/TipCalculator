@@ -14,3 +14,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "TipCalculator"
 include(":app")
+System.setProperty("sonar.gradle.skipCompile", "true")

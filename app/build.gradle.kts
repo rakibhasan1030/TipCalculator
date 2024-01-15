@@ -68,14 +68,3 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
-
-sonarqube {
-    properties {
-        property("sonar.sources", "./src/main")
-        property("sonar.host.url", "https://sonarcloud.io/")
-        property("sonar.organization", "rakibhasan1030")
-        property("sonar.projectKey", "rakibhasan1030_TipCalculator")
-        property("sonar.projectName", "TipCalculator")
-        property("sonar.gradle.skipCompile", "true")
-    }
-}
