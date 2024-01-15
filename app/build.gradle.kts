@@ -4,6 +4,16 @@ plugins {
     id("org.sonarqube")
 }
 
+sonarqube {
+    properties {
+        property("sonar.sources", "./src/main")
+        property("sonar.host.url", "https://sonarcloud.io/")
+        property("sonar.organization", "rakibhasan1030")
+        property("sonar.projectKey", "rakibhasan1030_TipCalculator")
+        property("sonar.projectName", "TipCalculator")
+    }
+}
+
 android {
     namespace = "com.example.tipcalculator"
     compileSdk = 34
@@ -67,4 +77,7 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    implementation("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:4.4.1.3373")
+
 }
