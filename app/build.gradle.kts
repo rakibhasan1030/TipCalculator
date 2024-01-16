@@ -3,15 +3,6 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("org.sonarqube") version "4.4.1.3373"
 }
-/*sonar {
-    properties {
-        property("sonar.sources", files("src/main").asPath)
-        property("sonar.host.url", "https://sonarcloud.io/")
-        property("sonar.organization", "rakibhasan1030")
-        property("sonar.projectKey", "rakibhasan1030_TipCalculator")
-        property("sonar.projectName", "TipCalculator")
-    }
-}*/
 android {
     namespace = "com.example.tipcalculator"
     compileSdk = 34
