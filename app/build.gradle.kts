@@ -5,7 +5,7 @@ plugins {
 }
 sonar {
     properties {
-        property("sonar.sources", "./src/main")
+        property("sonar.sources", files("src/main").asPath)
         property("sonar.host.url", "https://sonarcloud.io/")
         property("sonar.organization", "rakibhasan1030")
         property("sonar.projectKey", "rakibhasan1030_TipCalculator")
