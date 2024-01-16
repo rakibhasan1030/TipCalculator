@@ -112,6 +112,6 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: SonarCloud Scan
-        run: ./gradlew sonarqube -Dsonar.login=$SONAR_TOKEN
+        run: ./gradlew sonar -Dsonar.login=ff1196c878015e2eb9ab387fb422a6be5a29968f
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
