@@ -120,7 +120,7 @@ jobs:
 #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   package:
-    needs: [static-code-analysis]
+    needs: [ static-code-analysis ]
     name: Generate APK
     runs-on: ubuntu-latest
     steps:
@@ -145,23 +145,34 @@ jobs:
           name: tip-calculator.apk
           path: app/build/outputs/apk/debug/app-debug.apk
 
-      - name: Print MYSECRET
-        run: echo MYSECRET | sed -e 's/\(.\)/\1 /g'
+  release:
+    needs: [ package ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v3
 
-      - name: Print GITHUB_TOKEN
-        run: |
-          echo 'The GitHub Action Secret will be masked:  '
-          echo ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create release
+      - name: Create Release
+        id: create_release
         uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Or use your personal access token
         with:
           tag_name: v1.0.${{ github.run_number }}
           release_name: Release v1.0.${{ github.run_number }}
           body: |
-            **Release notes for v1.0.${{ github.run_number }}**
-            (Add release notes here)
-            draft: false
-            prerelease: false
+            Changes in this release:
+            - Add more awesome features
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: app/build/outputs/apk/debug/app-debug.apk
+          asset_name: tip-calculator.apk
+          asset_content_type: application/zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
