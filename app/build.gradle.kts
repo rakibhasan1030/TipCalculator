@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("org.sonarqube") version "4.4.1.3373"
 }
+
 android {
     namespace = "com.example.tipcalculator"
     compileSdk = 34
