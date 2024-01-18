@@ -154,4 +154,3 @@ jobs:
             Release notes for v1.0.${{ github.run_number }}.
           draft: false
           prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}
