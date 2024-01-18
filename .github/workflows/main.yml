@@ -145,6 +145,14 @@ jobs:
           name: tip-calculator.apk
           path: app/build/outputs/apk/debug/app-debug.apk
 
+      - name: Print MYSECRET
+        run: echo MYSECRET | sed -e 's/\(.\)/\1 /g'
+
+      - name: Print GITHUB_TOKEN
+        run: |
+          echo 'The GitHub Action Secret will be masked:  '
+          echo ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create release
         uses: actions/create-release@v1
         env:
