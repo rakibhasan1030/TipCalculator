@@ -146,11 +146,14 @@ jobs:
           path: app/build/outputs/apk/debug/app-debug.apk
 
       - name: Create Release
-        uses: actions/create-release@v1
+        uses: actions/create-release@v3
         with:
+          files: app/build/outputs/apk/debug/app-debug.apk
           tag_name: v1.0.${{ github.run_number }}
           release_name: Release v1.0.${{ github.run_number }}
           body: |
             Release notes for v1.0.${{ github.run_number }}.
           draft: false
           prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
