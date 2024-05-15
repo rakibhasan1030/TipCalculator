@@ -74,7 +74,7 @@ The CI/CD process is automated using GitHub Actions. The configuration file, loc
 ### License
   This project is licensed under the MIT License - see the [LICENSE](https://github.com/rakibhasan1030/TipCalculator/blob/04d300de0c1e5afba057ed5126f89f5ff1478ecf/LICENSE) file for details.
 ### Contact
-  <br>For any questions or support, please contact rakibhasan1030@gmail.com.
+  For any questions or support, please contact rakibhasan1030@gmail.com.
 
 
 
