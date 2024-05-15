@@ -36,6 +36,9 @@ The CI/CD pipeline for the Tip Calculator project includes six stages, ensuring 
 6. **Release**
   <br>Deploys the packaged application to the designated environment (e.g., Google Play Store, internal testing).
 
+![image info](./assets/ci-cd-pipeline.png)
+
+
 ## Getting Started
 
 ### Prerequisites
